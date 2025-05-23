@@ -25,4 +25,9 @@ class UserController @Inject()(val controllerComponents: ControllerComponents) e
     }
   }
 
+  def notFound(path: String) = Action {
+    NotFound(Json.obj("error" -> s"Path '$path' not found"))
+  }
+
+
 }
